@@ -1,0 +1,390 @@
+.body {
+	margin:0;
+	background-image: url(back.jpg);
+	background-size: contain;
+	}
+.header {
+	position: relative;
+	height: 5vw;
+	background: linear-gradient( -120deg, rgb(68, 102, 215) 47%, 
+		rgb(232, 237, 255) 69%, rgba(232, 237, 255, 1) 80.57096962616822%, 
+		rgba(232, 237, 255, 1) 82.4401285046729%, rgba(232, 237, 255, 1) 86.17844626168224%);
+	border-color: #000000;
+	border-width: 0.1vw;
+	border-style: dashed;
+}
+.footer{
+	position: relative;
+	height: 5vw;
+	width: 100%;
+	margin-top:  10%;
+	bottom: 0;
+	background: linear-gradient( 65deg, rgb(108, 30, 210) 0%, rgb(61, 25, 81) 5%, rgb(81, 81, 105) 100%, rgb(95, 95, 95) 100%);
+	border-color: #000000;
+}
+.B_login {
+	position: absolute;
+	top:20%;
+	left: 67%;
+	width: 14.88%;
+	height: 60%;
+	padding: 0px 10px 0px 10px;
+	background: linear-gradient(to right, rgb(214, 228, 212) 37%, rgb(129, 242, 255) 87.58031542056075%);
+	color: #460e56;
+	border-color: #232323;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 40px 40px 40px 40px;
+	font-family: "Asul";
+	font-weight: bold;
+	font-size: 1.3vw;
+	text-align: center;
+}
+.B_addpr {
+	left: 83%;
+	background: linear-gradient(to right, rgb(128, 196, 255) 31%, rgb(232, 255, 230) 100%);
+}
+.NAME
+{
+	position: absolute;
+	left: 2%;
+	top: 20%;
+	color: #5c1945;
+	font-family: "Alatsi";
+	font-weight: bold;
+	font-size: 2.5vw;
+	text-align: left;
+}
+.welcoming {
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	color: #000000;
+	font-family: "Asul";
+	font-weight: 400;
+	font-size: 2.5vw;
+}
+.OURPRODUCTS {
+	position: relative;
+	left: 2%;
+	top: 2.5vw;
+	color: #f7fade;
+	font-family: "Asul";
+	font-weight: 200;
+	font-size: 3vw;
+}
+.filters_pos {
+	position: relative;
+	top: -2vw;
+	left: 29%;
+	width: 70.8%;
+	height: 5vw;
+	background: linear-gradient(to right, rgba(254, 250, 250, 0.98) 0%, 
+		rgba(192, 189, 189, 1) 0%, rgb(95, 95, 95) 0%, rgba(236, 232, 232, 1) 0%, rgb(225, 0, 187) 97%);
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 10px 0px 0px 10px;
+}
+.filters_pos2 {
+	position: absolute;
+	margin-top: auto;
+	top: 11%;
+	left: 15%;
+	width: 67%;
+	height: 3vw;
+	padding: 0% 1% 1% 1%;
+	background: #d6d6d6;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 16px 16px 16px 16px;
+}
+.filter_by {
+	position: absolute;
+	top:23%;
+	margin-top: auto;
+	left: 1%;
+	color: #1c0c4f;
+	font-family: "Helvetica";
+	font-weight: bold;
+	font-size: 2.5vw;
+	text-align: left;
+}
+.filters {
+	position: relative;
+	color: #460e56;
+	font-family: "Asul";
+	font-size: 3vw;
+	top: 13%;
+}
+.filters.data {left: 19%;}
+.filters.suppl{left: 24%;}
+.filters.tags {left: 29%;}
+.separator{
+	position: absolute;
+	left: 30%;
+	top: 13%;
+	width: 1px;
+	height: 3.3vw;
+	border-color: #000000;
+	border-width: 0.2vw;
+	border-style: dotted;
+}
+.separator.two{left: 60%;}
+.Reset_All {
+	position: absolute;
+	left: 86%;
+	top: 0%;
+	color: #d4e3fc;
+	font-family: "Asul";
+	font-weight: bold;
+	font-size: 1.6vw;
+	text-decoration: underline;
+}
+.ad_pos{
+	position: relative;
+	left: 3%;
+	top: 1vh;
+	width: 40vw;
+	height: 20vw;
+	padding: 8px 8px 8px 8px;
+	background: linear-gradient(to right, rgb(254, 247, 255) 0%, rgb(219, 106, 244) 100%);
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 10% 10% 10% 10%;
+	margin-top: 6%;
+}
+.ad_posRight{
+	left: 53%;
+	margin-top: -22.2%;
+}
+.ramka{
+	position: absolute;
+	left: 2vw;
+	margin-top: auto;
+	top: 5%;
+	width: 17%;
+	height: 34%;
+	border-radius: 5% 5% 5% 5%;
+	border-color: #000000;
+	border-width: 0.1vw;
+	border-style: solid;
+	background-image: url(java.jpg);
+	background-size: cover;
+}
+.until_date{
+	margin-top: 0%;
+	margin-left: 0%;
+	position: absolute;
+	top: 40%;
+	left: 2.2vw;
+	color: #120639;
+	font-family: "3sul";
+	font-weight: 400;
+	font-size: 1.6vw;
+}
+.rate{
+	top: 46%;
+	left: 2.4vw;
+}
+.star{
+	position: absolute;
+	left: 1.8vw;
+	top:50%;
+	font-size: 2vw;
+}
+.B_addRev {
+	position: absolute;
+	top:62%;
+	width: 11vw;
+	height: 10%;
+	left:0.3vw;
+	background: linear-gradient(to right, rgb(212, 204, 84) 0%, rgb(255, 255, 255) 100%);
+	color: #120639;
+	border-color: #232323;
+	border-width: 0.05vw;
+	border-style: solid;
+	border-radius: 10vw 10vw 10vw 10vw;
+}
+.B_delete {
+	width: 5.2vw;
+	top: 75%;
+	background: linear-gradient(to right, rgb(255, 100, 95) 31%, rgb(187, 86, 69) 92%);
+	font-size: 0.9vw;
+	}
+.B_edit{
+	background: linear-gradient(to right, rgb(207, 206, 196) 0%, rgba(213, 212, 203, 1) 12.346670560747663%, 
+		rgba(222, 221, 214, 1) 31.038259345794394%, rgb(255, 255, 255) 100%);
+	left: 6.1vw;
+}
+.B_span{
+	position: absolute;
+	top:10%;
+	left: 10%;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 1.5vw;
+}
+.span_del{
+	font-size: 1vw;
+	top:24%;
+	left: 0.3vw;
+}
+.span_edit{
+	font-size: 1.3vw;
+	left:0.8vw;
+}
+.ad_Name {
+	position: absolute;
+	color: #460e56;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 1.5vw;
+	left: 25%;
+	top:5%;
+}
+.ad_review{
+	position: absolute;
+	margin-top: auto;
+	left:12vw;
+	top:59%;
+	width: 27vw;
+	height: 2.5vw;
+	background: #ffffff;
+	color: #000000;
+	border-color: #000000;
+	border-width: 0.1vw;
+	border-style: solid;
+	margin-bottom: auto;
+	border-radius: 25px 25px 25px 25px;
+}
+.ad_2{top:74%;}
+
+.review
+{
+	margin-top: auto;
+	position: absolute;
+	left:15%;
+	top:20%;
+	font-family: "Alatsi";
+	font-weight: bold;
+	font-size: 1.2vw;
+	text-align: left;
+}
+.picture1{
+	position: absolute;
+	margin-top: auto;
+	top:-5%;
+	left: -0.5vw;
+	width: 10%;
+	height: 100%;
+	border-radius: 20% 20% 20% 20%;
+	border-color: #000000;
+	border-width: 0.1vw;
+	border-style: solid;
+	background-image: url(avatar.png);
+	background-size: cover;
+}
+.ad_data {
+	position: absolute;
+	color: #120639;
+	font-family: "Asul";
+	font-weight: bold;
+	font-size: 1vw;
+	margin-bottom: auto;
+	top:92.5%;
+	left:35.5vw;
+	text-align: left;
+}
+.desc_pos {
+	position: absolute;
+	width: 28vw;
+	height: 6vw;
+	left: 25%;
+	top:14%;
+	padding: 8px 8px 8px 8px;
+	background: #f1f6be;
+	color: #000000;
+	border-color: #000000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 15px 15px 15px 15px;
+	font-family: "Asul";
+	font-weight: 400;
+	font-size: 1.4vw;
+	line-height: 1.3;
+	text-align: left;
+}
+.white {color: #FFFFFF;}
+.purple {color: #120639;}
+.Htags {
+	position: absolute;
+	left: 1vw;
+	top:93%;
+	height: 25px;
+	color: #460e56;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 1vw;
+	margin-top: auto;
+}
+.b_ShMeMo {
+	position: relative;
+	top: 4vw;
+	left: 41.5vw;
+	width: 16vw;
+	height: 5vw;
+	background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(243, 236, 254) 100%);
+	color: #232323;
+	border-width: 1px;
+	border-radius: 1vw 1vw 1vw 1vw;
+}
+.span_ShMeMo{
+	left: 1vw;
+	font-size: 2vw;
+	top: 25%;
+}
+
+.foot_name {
+	position: absolute;
+	left:40vw;
+	color: #c9f1fd;
+	font-family: "Helvetica";
+	font-weight: 400;
+	font-size: 2vw;
+}
+.foot_line {
+	position: absolute;;
+	left: 37.15vw;
+	top:45%;
+	width: 24vw;
+	height: 0vw;
+	border-color: #c9f1fd;
+	border-width: 0.1vw;
+	border-style: solid;
+}
+.foot_author{
+	position: absolute;
+	color: #c9f1fd;
+	font-family: "Helvetica";
+	font-weight: bold;
+	font-size: 1.7vw;
+	text-align: center;
+	left: 37.3vw;
+	top: 55%;
+}
+.foot_contuct {
+	position: absolute;
+	left: 1vw;
+	color: #fff1d7;
+	font-family: "Asul";
+	font-weight: bold;
+	font-size: 2vw;
+}
+.fdata{
+	left: 90vw;
+	top: 38%;
+	font-size: 1.5vw;
+}
