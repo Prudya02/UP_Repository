@@ -1,0 +1,6 @@
+SELECT 
+    *
+FROM
+    Discountropium.OFFER
+ORDER BY CREATED_AT
+LIMIT 5;

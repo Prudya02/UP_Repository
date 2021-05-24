@@ -1,0 +1,4 @@
+SELECT 
+    DATEDIFF(CURDATE(), MIN(OFFER.CREATED_AT))
+FROM
+    Discountropium.OFFER

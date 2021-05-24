@@ -1,0 +1,16 @@
+SELECT 
+    USER_ID, USERNAME
+FROM
+    (SELECT 
+        USER.USER_ID,
+            USERNAME,
+            VENDOR,
+            COUNT(USER.USER_ID) OFFER_AMOUNT
+    FROM
+        Discountropium.OFFER
+    LEFT JOIN Discountropium.USER ON OFFER.USER_ID = USER.USER_ID
+    WHERE
+        VALID_UNTIL >= CURDATE()
+    GROUP BY USER_ID) AS OFFERS_FOR_USER
+WHERE
+    OFFER_AMOUNT > 3

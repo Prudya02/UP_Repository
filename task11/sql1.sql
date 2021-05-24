@@ -1,0 +1,5 @@
+SELECT 
+    *
+FROM
+    Discountropium.OFFER
+ORDER BY CREATED_AT

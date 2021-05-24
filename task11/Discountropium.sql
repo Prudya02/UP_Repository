@@ -1,0 +1,120 @@
+DROP DATABASE IF EXISTS Discountropium;
+CREATE DATABASE IF NOT EXISTS Discountropium;
+USE Discountropium;
+SET AUTOCOMMIT = 0;
+DROP TABLE IF EXISTS REVIEWS;
+DROP TABLE IF EXISTS TAGS;
+DROP TABLE IF EXISTS OFFER;
+DROP TABLE IF EXISTS USER;
+
+CREATE TABLE USER (
+    USER_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    USERNAME VARCHAR(32) NOT NULL UNIQUE,
+    PASSWORD VARCHAR(32) NOT NULL,
+    VENDOR BOOL,
+    PRIMARY KEY (USER_ID)
+);
+
+
+CREATE TABLE OFFER (
+    OFFER_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    USER_ID INT NOT NULL,
+    OFFER_NAME VARCHAR(100) NOT NULL,
+    DESCRIPTION VARCHAR(200) NOT NULL,
+    VENDOR_LINK VARCHAR(200),
+    CREATED_AT DATETIME NOT NULL,
+    VALID_UNTIL DATETIME NOT NULL,
+    DISCOUNT INT NOT NULL,
+    PHOTO_LINK TEXT,
+    PRIMARY KEY (OFFER_ID),
+    FOREIGN KEY (USER_ID)
+        REFERENCES USER (USER_ID)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE TAGS (
+    OFFER_ID INT NOT NULL,
+    TAG VARCHAR(13),
+    FOREIGN KEY (OFFER_ID)
+        REFERENCES OFFER (OFFER_ID)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE REVIEWS (
+    USERNAME VARCHAR(32) NOT NULL,
+    OFFER_ID INT,
+    REWIEW TEXT,
+    RATE INT NOT NULL,
+    REVIEW_DATE DATETIME NOT NULL,
+    FOREIGN KEY (OFFER_ID)
+        REFERENCES OFFER (OFFER_ID)
+        ON DELETE CASCADE
+);
+
+LOCK TABLES USER WRITE;
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Isaac Newton', 'apple61', false);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('William Shakespeare', 'MusicDrownsOutSadness', true);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Alexander Hamilton', 'Hamiltonianism', true);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Alfred Krupp', 'VillaHugelUselees', false);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Thomas Aquinas', 'ProveMeWrong', false);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('George Washington', 'ThomasJ:3', true);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Daniel Defoe', 'ForeverAlone', true);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('David Foster', 'NotFunny2435', false);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Garry Kasparov', 'YourChessJokeHere', true);
+INSERT INTO USER(USERNAME, PASSWORD, VENDOR) VALUES ('Agatha Christie', 'PolzetPolzet', true);
+UNLOCK TABLES;
+
+LOCK TABLES OFFER WRITE;
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(2, 'Мемуары Шекспира', 'Невероятная палитра эмоций по сниженной цене', 'https://shekspir.net', curdate(), 15, '2021-01-21 20:00:20', 'D:/pic/p1.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(3, 'Труды Гамильтона', 'Каждый день скидка уменьшается', 'https://hamilton.net', curdate(), 20, '2021-01-21 20:00:30', 'D:/pic/p2.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(6, 'Труды Вашингтона', 'Лучше, чем труды Гамильтона!', 'https://washington.net', curdate(), 15, '2021-01-21 21:02:00', 'D:/pic/p3.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(7, 'Уроки по выживанию', 'Заплати деньгами сейчас, чтобы не платить жизнью потом!', 'https://defoe.net', curdate(), 35, '2021-01-21 21:02:00', 'D:/pic/p4.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(9, 'Опытный трейдер со стажем', 'Подаю сигналы по мизерным ценам!(запись только 2 дня!!)', 'https://kasparov.net','2020-01-21 20:00:00' , 50, '2025-01-21 20:00:00', 'D:/pic/p5.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(10, 'Кусры по правописанию', 'Он научился писать.3 недели ранее.Семья мальчика выбрала курс Агаты по скидке', 'https://agata.net', '2019-01-21 20:00:00', 25, '2022-01-21 20:00:00', 'D:/pic/p6.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(3, 'Вторая часть трудов Гамильтона', 'Ограниченное проедложение!', 'https://hamilton.net', curdate(), 3, '2022-02-04 19:00:00', 'D:/pic/p7.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(10, 'Курсы по драматургии', 'Но хотел ли мальчик уметь писать? Нет, его терзала отнюдь не эта мысль', 'https://agata.net', '2010-01-20 20:00:00', 20, '2022-02-10 21:00:00', 'D:/pic/p8.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(2, 'Секрет безоговорочной любви за 50%', 'Проведу личную консультацию и расскажу о секретах хорошего брака  ', 'https://shekspir.net', curdate(), 50, '2023-01-12 23:23:00', 'D:/pic/p9.png');
+INSERT INTO OFFER(USER_ID, OFFER_NAME, DESCRIPTION, VENDOR_LINK, CREATED_AT, DISCOUNT, VALID_UNTIL, PHOTO_LINK) VALUES 
+(7, 'Сборник сатиры про власть по сниженной цене', 'Смешно до слёз', 'https://agata.net', curdate(), 33, '2021-07-29 21:00:00', 'D:/pic/p10.png');
+UNLOCK TABLES;
+
+LOCK TABLES TAGS WRITE;
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (1, 'Drama');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (1, 'History');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (2, 'Politic');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (2, 'HurryUp');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (3, 'Politic');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (3, 'FromPresident');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (4, 'Course');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (4, 'NeedInLife');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (5, 'Profit');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (6, 'Course');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (6, 'NeedInLife');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (7, 'Drama');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (7, 'Course');
+INSERT INTO TAGS(OFFER_ID, TAG) VALUES (9, 'Course');
+UNLOCK TABLES;
+
+LOCK TABLES REVIEWS WRITE;
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Agata Christie', 1, 2, 'Плохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Tomas Aquinas', 2, 4, 'Неплохо!', '2021-05-09');
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('George Washington', 3, 1, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Alfred Krupp', 3, 5, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Agata Christie', 4, 3, 'Плохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('David Foster', 1, 4, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Isaac Newton', 3, 4, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Garry Kasparov', 6, 4, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Isaac Newton', 7, 5, 'Отлично!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Garry Kasparov', 2, 4, 'Неплохо!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Thomas Aquinas', 8, 1, 'ПЛОХО!', curdate());
+INSERT INTO REVIEWS(USERNAME, OFFER_ID, RATE, REWIEW, REVIEW_DATE) VALUES ('Isaac Newton', 10, 4, 'Неплохо!', curdate());
+UNLOCK TABLES;

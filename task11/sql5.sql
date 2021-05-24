@@ -1,0 +1,4 @@
+SELECT 
+    USERNAME, IF(VENDOR, 'VENDOR', 'User') AS ROLE
+FROM
+    Discountropium.USER

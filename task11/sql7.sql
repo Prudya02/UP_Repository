@@ -1,0 +1,8 @@
+SELECT 
+    *
+FROM
+    Discountropium.OFFER
+WHERE
+    LENGTH(OFFER.DESCRIPTION) > 96
+
+	
